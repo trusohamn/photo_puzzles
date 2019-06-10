@@ -15,9 +15,13 @@ body {
 }
 
 .puzzle {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 300px;
   height: 200px;
   background-image: url(https://picsum.photos/600/400);
+
 }
 
 #image1 {
@@ -41,4 +45,24 @@ body {
   background-position: 300px 200px;
   grid-row-start: 2;
   grid-column-start: 2;
+}
+
+button {
+  padding: 20px 25px;
+  background-color: rgba(128, 128, 128, 0.3);
+  border-radius: 20%;
+  color: white;
+  border: 1px solid white;
+}
+
+.top, .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.middle {
+  display: flex;
+  justify-content: space-between;
 }

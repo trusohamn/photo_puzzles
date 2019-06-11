@@ -1,3 +1,8 @@
+html{
+  margin: 0px;
+  background-color: black;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -25,7 +30,7 @@ body {
   justify-content: space-between;
   background-image: url(https://picsum.photos/600/400);
   border-radius: 10%;
-  box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.418), 5px 5px 10px rgba(0, 0, 0, 0.418);
+  box-shadow: inset 0px 0px 20px rgb(0, 0, 0);
 }
 
 .puzzle:hover button {

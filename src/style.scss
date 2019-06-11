@@ -5,26 +5,30 @@ body {
 }
 
 .container {
-  margin: 150px auto;
+  margin: 10vh auto;
   display: grid;
-  grid-template-columns: repeat( 2, minmax(100px, 1fr) );
-  grid-template-rows: auto auto;
+  grid-template-columns: repeat( 3, 1fr );
+  grid-template-rows: repeat( 3, 1fr );;
   grid-gap: 10px;
+}
+
+.ghost, .puzzle {
+  width: 300px;
+  height: 200px;
 }
 
 .puzzle {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 300px;
-  height: 200px;
   background-image: url(https://picsum.photos/600/400);
   border-radius: 10%;
   box-shadow: inset 0px 0px 10px;
 }
 
 .puzzle:hover button{
-  display: block;
+  opacity: 1;
+  transition: opacity 1s;
 }
 
 #image1 {
@@ -56,7 +60,8 @@ button {
   border-radius: 20%;
   color: white;
   border: 1px solid white;
-  display: none;
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 button:active {
@@ -76,13 +81,17 @@ button:active {
 
 @media screen and (max-width: 700px) {
   .container { 
-    margin: 150px auto;
+    margin: 10px 0px;
     grid-gap: 2px;
+    transform: scale(0.7);
+  }
+
+  .ghost, .puzzle {
+    width: 150px;
+    height: 150px;
   }
 
   .puzzle {
-    width: 150px;
-    height: 150px;
     background-image: url(https://picsum.photos/300/300);
   }
 
@@ -107,9 +116,9 @@ button:active {
   
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
   .container { 
-    transform: scale(1.5);
+    transform: scale(1.2);
   } 
 
 }

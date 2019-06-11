@@ -5,14 +5,15 @@ body {
 }
 
 .container {
-  margin: 10vh auto;
+  margin: 15vh auto;
   display: grid;
-  grid-template-columns: repeat( 3, 1fr );
-  grid-template-rows: repeat( 3, 1fr );;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 10px;
 }
 
-.ghost, .puzzle {
+.ghost,
+.puzzle {
   width: 300px;
   height: 200px;
 }
@@ -23,12 +24,12 @@ body {
   justify-content: space-between;
   background-image: url(https://picsum.photos/600/400);
   border-radius: 10%;
-  box-shadow: inset 0px 0px 10px;
+  box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.418), 5px 5px 10px rgba(0, 0, 0, 0.418);
 }
 
-.puzzle:hover button{
+.puzzle:hover button {
   opacity: 1;
-  transition: opacity 1s;
+  transition: opacity 500ms;
 }
 
 #image1 {
@@ -59,17 +60,18 @@ button {
   background-color: rgba(128, 128, 128, 0.3);
   border-radius: 20%;
   color: white;
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.26);
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 500ms;
 }
 
-button:active {
+button:focus {
   outline: none;
-  border: none;
+  border: 1px solid white;
 }
 
-.top, .bottom {
+.top,
+.bottom {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,14 +81,27 @@ button:active {
   justify-content: space-between;
 }
 
+@media screen and (min-width: 1200px) {
+  .container {
+    transform: scale(1.3);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    transform: scale(0.8);
+  }
+}
+
 @media screen and (max-width: 700px) {
-  .container { 
+  .container {
     margin: 10px 0px;
     grid-gap: 2px;
     transform: scale(0.7);
   }
 
-  .ghost, .puzzle {
+  .ghost,
+  .puzzle {
     width: 150px;
     height: 150px;
   }
@@ -99,26 +114,19 @@ button:active {
     padding: 10px 15px;
   }
 
-#image1 {
-  background-position: 0px 0px;
+  #image1 {
+    background-position: 0px 0px;
+  }
+
+  #image2 {
+    background-position: 150px 0px;
+  }
+  #image3 {
+    background-position: 0px 150px;
+  }
+
+  #image4 {
+    background-position: 150px 150px;
+  }
 }
 
-#image2 {
-  background-position: 150px 0px;
-}
-#image3 {
-  background-position: 0px 150px;
-}
-
-#image4 {
-  background-position: 150px 150px;
-}
-  
-}
-
-@media screen and (min-width: 1200px) {
-  .container { 
-    transform: scale(1.2);
-  } 
-
-}

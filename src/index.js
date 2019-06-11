@@ -21,8 +21,8 @@ document.querySelector('.container').addEventListener('click', (e) => {
                 break;
             }
         }
-
-        //e.target.parentNode.style['grid-area'] = newarea;
+    } else {
+        randomImages();
     }
 });
 

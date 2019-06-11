@@ -82,7 +82,7 @@ button:focus {
   justify-content: space-between;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1500px) {
   .container {
     transform: scale(1.3);
   }
@@ -114,18 +114,15 @@ button:focus {
   button {
     padding: 10px 15px;
   }
-
   #image1 {
     background-position: 0px 0px;
   }
-
   #image2 {
     background-position: 150px 0px;
   }
   #image3 {
     background-position: 0px 150px;
   }
-
   #image4 {
     background-position: 150px 150px;
   }

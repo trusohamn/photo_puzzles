@@ -60,12 +60,12 @@ function randomImages() {
             divs[count].animate(
                 // keyframes
                 [
-                    { transform: `translate(${ deltaX }px, ${ deltaY }px)`},
-                    { transform: `translate(${ deltaX }px, ${ deltaY }px)`, offset:0.1},
-                    { transform: 'none' }],
+                    {  transformOrigin: 'center', transform: `translate(${ deltaX }px, ${ deltaY }px)`},
+                    // {  transformOrigin: 'center', transform: `translate(${ deltaX }px, ${ deltaY }px)`, offset:0.5},
+                    {  transformOrigin: 'center', transform: 'none' }],
                     // timing options
                 {
-                    duration: 2500,
+                    duration: 1000,
                     easing: 'ease-in-out'
                 });
             count++;

@@ -30,19 +30,16 @@ document.querySelector('.container').addEventListener('click', (e) => {
         const deltaX = first.left - last.left;
         const deltaY = first.top - last.top;
 
-        elm.animate([{
-            transformOrigin: 'top left',
-            transform: `
-              translate(${deltaX}px, ${deltaY}px)
-            `
-          }, {
-            transformOrigin: 'top left',
-            transform: 'none'
-          }], {
-            duration: 500,
-            easing: 'ease-in-out',
-            fill: 'both'
-          });
+        elm.animate(
+            // keyframes
+            [
+                { transform: `translate(${ deltaX }px, ${ deltaY }px)`},
+                { transform: 'none' }],
+                // timing options
+            {
+                duration: 1000,
+                easing: `ease-in-out`
+            });
     } else {
         randomImages();
     }
@@ -50,7 +47,7 @@ document.querySelector('.container').addEventListener('click', (e) => {
 
 function randomImages() {
     const divs = Array.from(document.querySelectorAll('.container>div'));
-    console.log(shuffle(divs));
+    shuffle(divs);
     let count = 0
     for (let r = 1; r <= 3; r++) {
         for (let c = 1; c <= 3; c++) {
@@ -60,19 +57,17 @@ function randomImages() {
             const last = divs[count].getBoundingClientRect();
             const deltaY = first.top - last.top;
             const deltaX = first.left - last.left;
-            divs[count].animate([{
-                transformOrigin: 'top left',
-                transform: `
-                  translate(${deltaX}px, ${deltaY}px)
-                `
-              }, {
-                transformOrigin: 'top left',
-                transform: 'none'
-              }], {
-                duration: 500,
-                easing: 'ease-in-out',
-                fill: 'both'
-              });
+            divs[count].animate(
+                // keyframes
+                [
+                    { transform: `translate(${ deltaX }px, ${ deltaY }px)`},
+                    { transform: `translate(${ deltaX }px, ${ deltaY }px)`, offset:0.1},
+                    { transform: 'none' }],
+                    // timing options
+                {
+                    duration: 2500,
+                    easing: 'ease-in-out'
+                });
             count++;
         }
     }

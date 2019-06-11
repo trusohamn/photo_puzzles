@@ -54,8 +54,25 @@ function randomImages() {
     let count = 0
     for (let r = 1; r <= 3; r++) {
         for (let c = 1; c <= 3; c++) {
+            const first = divs[count].getBoundingClientRect();
             divs[count].style['grid-row-start'] = r;
             divs[count].style['grid-column-start'] = c;
+            const last = divs[count].getBoundingClientRect();
+            const deltaY = first.top - last.top;
+            const deltaX = first.left - last.left;
+            divs[count].animate([{
+                transformOrigin: 'top left',
+                transform: `
+                  translate(${deltaX}px, ${deltaY}px)
+                `
+              }, {
+                transformOrigin: 'top left',
+                transform: 'none'
+              }], {
+                duration: 500,
+                easing: 'ease-in-out',
+                fill: 'both'
+              });
             count++;
         }
     }

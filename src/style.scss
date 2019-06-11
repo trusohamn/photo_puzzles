@@ -19,6 +19,8 @@ body {
   width: 300px;
   height: 200px;
   background-image: url(https://picsum.photos/600/400);
+  border-radius: 10%;
+  box-shadow: inset 0px 0px 10px;
 }
 
 .puzzle:hover button{
@@ -55,6 +57,11 @@ button {
   color: white;
   border: 1px solid white;
   display: none;
+}
+
+button:active {
+  outline: none;
+  border: none;
 }
 
 .top, .bottom {

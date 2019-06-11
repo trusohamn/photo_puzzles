@@ -22,7 +22,7 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: './src',
-    publicPath: '/output'
+    contentBase: './dist',
+    publicPath: '/dist'
  }
 };

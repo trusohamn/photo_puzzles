@@ -29,7 +29,7 @@ document.querySelector('.container').addEventListener('click', (e) => {
         const last = elm.getBoundingClientRect();
         const deltaX = first.left - last.left;
         const deltaY = first.top - last.top;
-
+        console.log(deltaY, deltaX);
         elm.animate(
             // keyframes
             [
@@ -37,7 +37,7 @@ document.querySelector('.container').addEventListener('click', (e) => {
                 { transform: 'none' }],
                 // timing options
             {
-                duration: 1000,
+                duration: 300,
                 easing: `ease-in-out`
             });
     } else {
@@ -57,16 +57,17 @@ function randomImages() {
             const last = divs[count].getBoundingClientRect();
             const deltaY = first.top - last.top;
             const deltaX = first.left - last.left;
+            
             divs[count].animate(
                 // keyframes
                 [
-                    {  transformOrigin: 'center', transform: `translate(${ deltaX }px, ${ deltaY }px)`},
-                    // {  transformOrigin: 'center', transform: `translate(${ deltaX }px, ${ deltaY }px)`, offset:0.5},
-                    {  transformOrigin: 'center', transform: 'none' }],
+                    {  transform: `translate(${deltaX}px, ${deltaY}px)`},
+                    {  transform: 'none' }],
                     // timing options
                 {
-                    duration: 1000,
-                    easing: 'ease-in-out'
+                    duration: 300,
+                    easing: 'ease-in-out',
+                    fill: 'both'
                 });
             count++;
         }
